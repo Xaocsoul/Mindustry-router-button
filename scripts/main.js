@@ -4,13 +4,13 @@ const hexref = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0", "a", "b", "c",
 
 Events.on(EventType.ClientLoadEvent, cons(load => {
     Vars.ui.hudGroup.fill(cons(table => {
-        table.button(Icon.admin, Styles.cleari, run(() => {
+        table.button(Icon.router, Styles.cleari, run(() => {
         
         generate_and_send();
         
         })).width(50).height(50).name("admin button");
         
-        table.top().marginLeft(900);
+        table.top().marginLeft(800);
     }));
 }));
 
@@ -22,7 +22,7 @@ function generate_and_send() {
           rgbhex+=hexref[Mathf.floor(Mathf.random() * 16)];
        };
     let rand = Mathf.ceil(Mathf.random()*1000);
-    msg+=rgbhex + "]" + ((rand == 1) ? "": "☠️");
+    msg+=rgbhex + "]" + ((rand == 1) ? "": "");
     };
     Call.sendChatMessage(msg);
 };
